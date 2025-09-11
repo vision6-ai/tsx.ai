@@ -32,7 +32,7 @@ The core platform document outlining the complete system design, including:
 
 ---
 
-### 🤖 [AGNO AI Agents Service PRD](AGNO-prd.md)
+### 🤖 [AI Agents Service PRD](agents-ai.md)
 **Core intelligence and orchestration layer**
 
 Details the AI agent architecture powering the platform's analysis pipeline:
@@ -112,7 +112,7 @@ Specifications for the exclusive data collection service covering:
 ## Getting Started
 
 1. **Review the Platform PRD** - Start with [tsx-platform.md](tsx-platform.md) for overall system understanding
-2. **Understand the AI Architecture** - Read [AGNO-prd.md](AGNO-prd.md) for agent implementation details
+2. **Understand the AI Architecture** - Read [agents-ai.md](agents-ai.md) for agent implementation details
 3. **Configure Data Sources** - Refer to [data-collection.md](data-collection.md) for ingestion setup
 
 ## Development Phases
