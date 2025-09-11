@@ -1,6 +1,9 @@
-[← Back to Index](index.html)
-
 ---
+layout: default
+title: Data Collection Service PRD
+---
+
+[← Back to Index](index.html)
 
 # Data Collection Service PRD
 

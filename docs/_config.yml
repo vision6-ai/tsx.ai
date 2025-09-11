@@ -1,5 +1,8 @@
 # Jekyll configuration for GitHub Pages
-theme: jekyll-theme-cayman
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+
 title: TSX.AI Platform
 description: Real-time market intelligence for Canadian stocks
 show_downloads: false
@@ -9,9 +12,3 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
-# Include files
-include:
-  - "*.md"
-  - "*.html"
-  - "wireframes/**/*"

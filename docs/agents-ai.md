@@ -1,6 +1,9 @@
-[← Back to Index](index.html)
-
 ---
+layout: default
+title: AI Agents Service PRD
+---
+
+[← Back to Index](index.html)
 
 # AGNO AI Agents Service PRD (v2)
 

@@ -1,6 +1,9 @@
-[← Back to Index](index.html)
-
 ---
+layout: default
+title: TSX.AI Platform PRD
+---
+
+[← Back to Index](index.html)
 
 # TSX.AI Platform Product Requirements Document (PRD)
 
