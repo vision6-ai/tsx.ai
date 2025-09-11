@@ -1,7 +1,3 @@
-[← Back to Index](index.md)
-
----
-
 # Data Collection Service PRD
 
 ## 1. Service Overview
