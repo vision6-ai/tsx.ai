@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these directories
+!docs/
+!docs/**
+!wireframes/
+!wireframes/**
+
+# Also keep the .gitignore file itself
+!.gitignore
