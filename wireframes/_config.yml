@@ -1,0 +1,5 @@
+# GitHub Pages Configuration for TSX.AI Wireframes
+theme: null
+title: TSX.AI - Market Intelligence Platform
+description: Real-time sentiment analysis for Canadian stocks
+baseurl: "/wireframes"

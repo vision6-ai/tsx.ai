@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Watchlists - TSX.AI</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <nav class="nav-menu">
+                    <a href="../index.html" class="nav-item">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="library.html" class="nav-item">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                    </a>
+                    <a href="watchlists.html" class="nav-item active">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">My Watchlists</span>
+                    </a>
+                    <a href="intelligence.html" class="nav-item">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Market Intelligence</span>
+                    </a>
+                    <a href="insights.html" class="nav-item">
+                        <span class="nav-icon">💭</span>
+                        <span class="nav-text">Saved Insights</span>
+                    </a>
+                    <a href="schedule.html" class="nav-item">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Monitoring Schedule</span>
+                    </a>
+                    <a href="integrations.html" class="nav-item">
+                        <span class="nav-icon">🔗</span>
+                        <span class="nav-text">Integrations</span>
+                    </a>
+                    <a href="settings.html" class="nav-item">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">AI Settings</span>
+                    </a>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <a href="academy.html" class="nav-item">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Academy</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Community</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    <a href="status.html" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Status</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    <a href="updates.html" class="nav-item">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Updates</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <span class="nav-icon">📧</span>
+                        <span class="nav-text">Support</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="page-wrapper">
+                <header class="page-header">
+                    <h1>My Watchlists</h1>
+                    <p>Monitor your favorite Canadian stocks and track sentiment changes</p>
+                </header>
+
+                <div class="watchlist-container">
+                    <div class="watchlist-item">
+                        <div class="watchlist-info">
+                            <h3>Tech Giants</h3>
+                            <p>SHOP, BB, LSPD, NVEI</p>
+                        </div>
+                        <div class="watchlist-stats">
+                            <div class="stat-item">
+                                <div class="stat-value positive">+12%</div>
+                                <div class="stat-label">Sentiment</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">247</div>
+                                <div class="stat-label">Mentions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="watchlist-item">
+                        <div class="watchlist-info">
+                            <h3>Banking Sector</h3>
+                            <p>RY, TD, BMO, BNS, CM</p>
+                        </div>
+                        <div class="watchlist-stats">
+                            <div class="stat-item">
+                                <div class="stat-value neutral">+2%</div>
+                                <div class="stat-label">Sentiment</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">189</div>
+                                <div class="stat-label">Mentions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="watchlist-item">
+                        <div class="watchlist-info">
+                            <h3>Energy Stocks</h3>
+                            <p>SU, CNQ, CVE, IMO</p>
+                        </div>
+                        <div class="watchlist-stats">
+                            <div class="stat-item">
+                                <div class="stat-value negative">-5%</div>
+                                <div class="stat-label">Sentiment</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">412</div>
+                                <div class="stat-label">Mentions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="watchlist-item">
+                        <div class="watchlist-info">
+                            <h3>Mining & Resources</h3>
+                            <p>ABX, AEM, K, FM</p>
+                        </div>
+                        <div class="watchlist-stats">
+                            <div class="stat-item">
+                                <div class="stat-value positive">+8%</div>
+                                <div class="stat-label">Sentiment</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">156</div>
+                                <div class="stat-label">Mentions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="save-btn" style="margin-top: 20px;">+ Create New Watchlist</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

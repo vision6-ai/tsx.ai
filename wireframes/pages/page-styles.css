@@ -1,0 +1,319 @@
+/* Page-specific styles for all sub-pages */
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.page-header {
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Library Page Styles */
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.library-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.library-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.library-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.library-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.use-template-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.use-template-btn:hover {
+    background-color: #4f46e5;
+}
+
+/* Watchlists Page Styles */
+.watchlist-container {
+    display: grid;
+    gap: 24px;
+}
+
+.watchlist-item {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.watchlist-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.watchlist-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.watchlist-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+/* Intelligence Page Styles */
+.intelligence-dashboard {
+    display: grid;
+    gap: 24px;
+}
+
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.metric-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.metric-value.positive {
+    color: #10b981;
+}
+
+.metric-value.negative {
+    color: #ef4444;
+}
+
+.metric-value.neutral {
+    color: #6b7280;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.chart-container {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+/* Schedule Page Styles */
+.schedule-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.schedule-item {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-info {
+    flex: 1;
+}
+
+.schedule-time {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.schedule-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.schedule-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.schedule-toggle {
+    width: 50px;
+    height: 26px;
+    background: #e5e5e5;
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.schedule-toggle.active {
+    background: #10b981;
+}
+
+.schedule-toggle::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.schedule-toggle.active::after {
+    transform: translateX(24px);
+}
+
+/* Settings Page Styles */
+.settings-section {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.settings-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.setting-description {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.setting-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 8px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.save-btn {
+    padding: 10px 24px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+    background-color: #4f46e5;
+}

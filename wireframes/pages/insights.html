@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Insights - TSX.AI</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .insights-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .insight-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .insight-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .insight-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .insight-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .insight-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+        
+        .insight-ticker {
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #4a4a4a;
+        }
+        
+        .insight-content {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .insight-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .tag {
+            background: #f7f7f7;
+            border: 1px solid #e5e5e5;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .insight-actions {
+            display: flex;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .action-btn {
+            background: none;
+            border: none;
+            color: #6366f1;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: all 0.2s;
+        }
+        
+        .action-btn:hover {
+            background: #f7f7ff;
+            border-radius: 4px;
+        }
+        
+        .sentiment-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .sentiment-positive {
+            background: #d4f4dd;
+            color: #0a7c42;
+        }
+        
+        .sentiment-negative {
+            background: #ffd6d6;
+            color: #d32f2f;
+        }
+        
+        .sentiment-neutral {
+            background: #f0f0f0;
+            color: #666;
+        }
+        
+        .filter-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-btn:hover {
+            border-color: #6366f1;
+            color: #6366f1;
+        }
+        
+        .filter-btn.active {
+            background: #6366f1;
+            color: white;
+            border-color: #6366f1;
+        }
+        
+        .search-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        .search-btn {
+            padding: 12px 24px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .search-btn:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <nav class="nav-menu">
+                    <a href="../index.html" class="nav-item">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="library.html" class="nav-item">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Library</span>
+                    </a>
+                    <a href="watchlists.html" class="nav-item">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">My Watchlists</span>
+                    </a>
+                    <a href="intelligence.html" class="nav-item">
+                        <span class="nav-icon">🧠</span>
+                        <span class="nav-text">Market Intelligence</span>
+                    </a>
+                    <a href="insights.html" class="nav-item active">
+                        <span class="nav-icon">💭</span>
+                        <span class="nav-text">Saved Insights</span>
+                    </a>
+                    <a href="schedule.html" class="nav-item">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-text">Monitoring Schedule</span>
+                    </a>
+                    <a href="integrations.html" class="nav-item">
+                        <span class="nav-icon">🔗</span>
+                        <span class="nav-text">Integrations</span>
+                    </a>
+                    <a href="settings.html" class="nav-item">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">AI Settings</span>
+                    </a>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <a href="academy.html" class="nav-item">
+                        <span class="nav-icon">🎓</span>
+                        <span class="nav-text">Academy</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    <a href="community.html" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Community</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    <a href="status.html" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Status</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    <a href="updates.html" class="nav-item">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-text">Updates</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <span class="nav-icon">📧</span>
+                        <span class="nav-text">Support</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="page-wrapper">
+                <header class="page-header">
+                    <h1>Saved Insights</h1>
+                    <p>Your collection of important market observations and AI-generated insights</p>
+                </header>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search insights by ticker, keyword, or date...">
+                    <button class="search-btn">Search</button>
+                </div>
+
+                <!-- Filter Options -->
+                <div class="filter-bar">
+                    <button class="filter-btn active">All Insights</button>
+                    <button class="filter-btn">Bullish</button>
+                    <button class="filter-btn">Bearish</button>
+                    <button class="filter-btn">Alerts</button>
+                    <button class="filter-btn">AI Generated</button>
+                    <button class="filter-btn">Manual Notes</button>
+                    <button class="filter-btn">This Week</button>
+                </div>
+
+                <!-- Insights Grid -->
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div>
+                                <div class="insight-title">Shopify Sentiment Surge Detected</div>
+                                <div class="insight-meta">
+                                    <span>📅 Today at 2:45 PM</span>
+                                    <span>🤖 AI Generated</span>
+                                    <span>📊 High Confidence</span>
+                                </div>
+                            </div>
+                            <span class="sentiment-badge sentiment-positive">Bullish +28%</span>
+                        </div>
+                        <div class="insight-content">
+                            Significant positive sentiment shift detected for SHOP across Twitter and Reddit. Volume of mentions increased by 156% in the last 4 hours, with 78% positive sentiment. Key drivers include new partnership announcement and positive analyst coverage.
+                        </div>
+                        <div class="insight-tags">
+                            <span class="tag">SHOP</span>
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Partnership</span>
+                            <span class="tag">Volume Spike</span>
+                        </div>
+                        <div class="insight-actions">
+                            <button class="action-btn">📌 Pin</button>
+                            <button class="action-btn">🔗 Share</button>
+                            <button class="action-btn">📊 View Details</button>
+                            <button class="action-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div>
+                                <div class="insight-title">Banking Sector Weekly Analysis</div>
+                                <div class="insight-meta">
+                                    <span>📅 Yesterday at 9:00 AM</span>
+                                    <span>📝 Manual Note</span>
+                                    <span>📊 Medium Confidence</span>
+                                </div>
+                            </div>
+                            <span class="sentiment-badge sentiment-neutral">Neutral +2%</span>
+                        </div>
+                        <div class="insight-content">
+                            Canadian banking stocks showing mixed sentiment. RBC and TD maintaining stable positive sentiment around 65%, while BMO experiencing slight negative pressure due to earnings concerns. Overall sector sentiment remains cautiously optimistic.
+                        </div>
+                        <div class="insight-tags">
+                            <span class="tag">RY</span>
+                            <span class="tag">TD</span>
+                            <span class="tag">BMO</span>
+                            <span class="tag">Banking</span>
+                            <span class="tag">Weekly Report</span>
+                        </div>
+                        <div class="insight-actions">
+                            <button class="action-btn">📌 Pin</button>
+                            <button class="action-btn">🔗 Share</button>
+                            <button class="action-btn">📊 View Details</button>
+                            <button class="action-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div>
+                                <div class="insight-title">BlackBerry Unusual Options Activity</div>
+                                <div class="insight-meta">
+                                    <span>📅 Dec 9 at 3:30 PM</span>
+                                    <span>🚨 Alert</span>
+                                    <span>📊 High Confidence</span>
+                                </div>
+                            </div>
+                            <span class="sentiment-badge sentiment-positive">Bullish +15%</span>
+                        </div>
+                        <div class="insight-content">
+                            Detected unusual call option activity for BB with social sentiment turning increasingly bullish. StockTwits activity up 230% with multiple influential accounts discussing potential cybersecurity contracts. Reddit WSB mentions also increasing.
+                        </div>
+                        <div class="insight-tags">
+                            <span class="tag">BB</span>
+                            <span class="tag">Options</span>
+                            <span class="tag">Unusual Activity</span>
+                            <span class="tag">Cybersecurity</span>
+                        </div>
+                        <div class="insight-actions">
+                            <button class="action-btn">📌 Pin</button>
+                            <button class="action-btn">🔗 Share</button>
+                            <button class="action-btn">📊 View Details</button>
+                            <button class="action-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div>
+                                <div class="insight-title">Air Canada Sentiment Decline Alert</div>
+                                <div class="insight-meta">
+                                    <span>📅 Dec 8 at 11:15 AM</span>
+                                    <span>🤖 AI Generated</span>
+                                    <span>📊 High Confidence</span>
+                                </div>
+                            </div>
+                            <span class="sentiment-badge sentiment-negative">Bearish -12%</span>
+                        </div>
+                        <div class="insight-content">
+                            Negative sentiment building for AC following service disruption news. Twitter mentions showing 68% negative sentiment, primarily focused on customer service issues and flight cancellations. Institutional sentiment remains stable but retail sentiment declining rapidly.
+                        </div>
+                        <div class="insight-tags">
+                            <span class="tag">AC</span>
+                            <span class="tag">Airlines</span>
+                            <span class="tag">Service Issues</span>
+                            <span class="tag">Sentiment Alert</span>
+                        </div>
+                        <div class="insight-actions">
+                            <button class="action-btn">📌 Pin</button>
+                            <button class="action-btn">🔗 Share</button>
+                            <button class="action-btn">📊 View Details</button>
+                            <button class="action-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div>
+                                <div class="insight-title">Gold Mining Sector Momentum</div>
+                                <div class="insight-meta">
+                                    <span>📅 Dec 7 at 4:00 PM</span>
+                                    <span>📝 Manual Note</span>
+                                    <span>📊 Medium Confidence</span>
+                                </div>
+                            </div>
+                            <span class="sentiment-badge sentiment-positive">Bullish +8%</span>
+                        </div>
+                        <div class="insight-content">
+                            Gold mining stocks (ABX, AEM, K) showing coordinated positive sentiment following gold price movements. CEO.ca forums particularly active with discussion of Q4 production numbers. Sentiment correlation with gold futures at 0.82.
+                        </div>
+                        <div class="insight-tags">
+                            <span class="tag">ABX</span>
+                            <span class="tag">AEM</span>
+                            <span class="tag">Gold</span>
+                            <span class="tag">Mining</span>
+                            <span class="tag">Commodities</span>
+                        </div>
+                        <div class="insight-actions">
+                            <button class="action-btn">📌 Pin</button>
+                            <button class="action-btn">🔗 Share</button>
+                            <button class="action-btn">📊 View Details</button>
+                            <button class="action-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div>
+                                <div class="insight-title">Energy Sector Weekly Correlation Analysis</div>
+                                <div class="insight-meta">
+                                    <span>📅 Dec 6 at 9:00 AM</span>
+                                    <span>🤖 AI Generated</span>
+                                    <span>📊 High Confidence</span>
+                                </div>
+                            </div>
+                            <span class="sentiment-badge sentiment-negative">Bearish -5%</span>
+                        </div>
+                        <div class="insight-content">
+                            Energy stocks (SU, CNQ, CVE) sentiment showing strong correlation with WTI crude prices. Social sentiment lagging price movements by approximately 4-6 hours. Reddit discussions focusing on OPEC+ decisions and winter demand forecasts.
+                        </div>
+                        <div class="insight-tags">
+                            <span class="tag">SU</span>
+                            <span class="tag">CNQ</span>
+                            <span class="tag">CVE</span>
+                            <span class="tag">Energy</span>
+                            <span class="tag">Oil Prices</span>
+                        </div>
+                        <div class="insight-actions">
+                            <button class="action-btn">📌 Pin</button>
+                            <button class="action-btn">🔗 Share</button>
+                            <button class="action-btn">📊 View Details</button>
+                            <button class="action-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="save-btn" style="margin-top: 24px;">+ Create New Insight</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In production, this would filter the insights
+                console.log('Filtering by:', this.textContent);
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-input').value;
+            if (searchTerm) {
+                console.log('Searching for:', searchTerm);
+                // In production, this would search through insights
+            }
+        });
+
+        // Action buttons
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const action = this.textContent.trim();
+                console.log('Action:', action);
+                
+                if (action.includes('Pin')) {
+                    this.textContent = this.textContent.includes('📌') ? '📍 Pinned' : '📌 Pin';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

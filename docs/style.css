@@ -346,6 +346,134 @@ body {
   font-size: 0.95rem;
 }
 
+/* Prototype Section */
+.prototype-container {
+  margin-top: 1.5rem;
+}
+
+.prototype-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--secondary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.prototype-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+.prototype-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.prototype-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.prototype-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.prototype-description {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.prototype-features {
+  background: var(--bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-col h4 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-col ul li {
+  padding: 0.4rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.feature-col ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.prototype-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.prototype-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.prototype-btn.primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
+}
+
+.prototype-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(30, 58, 138, 0.3);
+}
+
+.prototype-btn.secondary {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.prototype-btn.secondary:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
 /* Footer */
 .footer {
   background: var(--card-bg);
