@@ -1,3 +1,7 @@
+[← Back to Index](index.md)
+
+---
+
 # TSX.AI Platform Product Requirements Document (PRD)
 
 ## 1. Platform Overview
@@ -20,7 +24,7 @@ The platform's architecture is composed of four primary layers:
 *   **Identity Layer (Frontegg):** Manages all user and tenant information, authentication, and subscription logic.
 *   **Data Ingestion Layer (AGNO + Firecrawl):** An AGNO agent equipped with Firecrawl tools is responsible for scraping content from specified web sources based on tenant configuration.
 *   **Data Storage Layer (AGNO + MongoDB):** A MongoDB database, integrated via AGNO's native connector, serves as the central, multi-tenant repository for all raw and processed data.
-*   **AI Analysis Layer (AGNO + Gemini Service):** A pipeline of specialized AGNO agents performs analysis. These agents utilize the **Gemini Service** for advanced language understanding and generation tasks.
+*   **AI Analysis Layer (AGNO + Gemini/Claude Service):** A pipeline of specialized AGNO agents performs analysis. These agents utilize the **Gemini Service** for advanced language understanding and generation tasks.
 
 ## 4. Agent Architecture
 
