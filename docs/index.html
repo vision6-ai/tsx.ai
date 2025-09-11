@@ -21,33 +21,11 @@
             <a href="#overview" class="nav-link">Overview</a>
             <a href="#prds" class="nav-link">Documentation</a>
             <a href="#architecture" class="nav-link">Architecture</a>
-            <a href="#phases" class="nav-link">Roadmap</a>
-            <a href="#quicklinks" class="nav-link">Resources</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <div class="status-item">
-                <div class="status-label">Data Sources</div>
-                <div class="status-value">30+</div>
-            </div>
-            <div class="status-item">
-                <div class="status-label">AI Agents</div>
-                <div class="status-value">4</div>
-            </div>
-            <div class="status-item">
-                <div class="status-label">Current Phase</div>
-                <div class="status-value">MVP</div>
-            </div>
-            <div class="status-item">
-                <div class="status-label">Documentation</div>
-                <div class="status-value">100%</div>
-            </div>
-        </div>
-
         <!-- Project Overview -->
         <section id="overview" class="section">
             <h2 class="section-title">Project Overview</h2>
@@ -152,6 +130,20 @@
 └─────────────────────────────────────────────────┘
                         │
 ┌─────────────────────────────────────────────────┐
+│         Data Collection Service Layer            │
+│               (Firecrawl Tools)                  │
+│                                                  │
+│  ┌─────────────────────────────────────────┐   │
+│  │        Web Scraping & Crawling          │   │
+│  │  • Forums (CEO.ca, Stockhouse, Reddit)  │   │
+│  │  • Social Media (Twitter/X, StockTwits) │   │
+│  │  • News Sites & Press Releases          │   │
+│  │  • Regulatory Filings (SEDAR+)          │   │
+│  │  • 30+ Data Sources                     │   │
+│  └─────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────┘
+                        │
+┌─────────────────────────────────────────────────┐
 │              AGNO AI Agents Service              │
 │                                                  │
 │  ┌──────────────┐    ┌──────────────────────┐  │
@@ -173,60 +165,6 @@
             </div>
         </section>
 
-        <!-- Development Phases -->
-        <section id="phases" class="section">
-            <h2 class="section-title">Development Roadmap</h2>
-            <div class="phases">
-                <div class="phase-card">
-                    <h3 class="phase-title">Phase 1: MVP</h3>
-                    <ul class="phase-items">
-                        <li>Frontegg integration for authentication</li>
-                        <li>Basic ingestion for Twitter and CEO.ca</li>
-                        <li>Content classification and sentiment analysis</li>
-                        <li>Single ticker support per tenant</li>
-                    </ul>
-                </div>
-                <div class="phase-card">
-                    <h3 class="phase-title">Phase 2: Expansion</h3>
-                    <ul class="phase-items">
-                        <li>Full platform coverage (all data sources)</li>
-                        <li>Insight and alerting system</li>
-                        <li>Subscription plans and feature flags</li>
-                        <li>Complete MongoDB schema implementation</li>
-                    </ul>
-                </div>
-                <div class="phase-card">
-                    <h3 class="phase-title">Phase 3: Advanced</h3>
-                    <ul class="phase-items">
-                        <li>Predictive analytics capabilities</li>
-                        <li>External API development</li>
-                        <li>Advanced data visualizations</li>
-                        <li>Machine learning enhancements</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Links -->
-        <section id="quicklinks" class="section">
-            <h2 class="section-title">Quick Links & Resources</h2>
-            <div class="quick-links">
-                <div class="links-grid">
-                    <div class="link-item">
-                        <a href="https://github.com/vision6-ai/tsx.ai" target="_blank">GitHub Repository</a>
-                    </div>
-                    <div class="link-item">
-                        <a href="https://docs.agno.ai" target="_blank">AGNO Framework</a>
-                    </div>
-                    <div class="link-item">
-                        <a href="https://docs.frontegg.com" target="_blank">Frontegg Docs</a>
-                    </div>
-                    <div class="link-item">
-                        <a href="https://www.mongodb.com/atlas" target="_blank">MongoDB Atlas</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
