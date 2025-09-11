@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSX.AI - Market Intelligence Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>TSX.AI Platform</h1>
+            <p class="header-subtitle">Real-time market intelligence solution for Canadian small-cap stocks. Powered by multi-agent AI system built on the AGNO framework.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#overview" class="nav-link">Overview</a>
+            <a href="#prds" class="nav-link">Documentation</a>
+            <a href="#architecture" class="nav-link">Architecture</a>
+            <a href="#phases" class="nav-link">Roadmap</a>
+            <a href="#quicklinks" class="nav-link">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-label">Data Sources</div>
+                <div class="status-value">30+</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">AI Agents</div>
+                <div class="status-value">4</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Current Phase</div>
+                <div class="status-value">MVP</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Documentation</div>
+                <div class="status-value">100%</div>
+            </div>
+        </div>
+
+        <!-- Project Overview -->
+        <section id="overview" class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>🔐 Multi-tenant Architecture</h4>
+                    <p>Secure, isolated data for each client company with Frontegg integration</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📊 Real-time Data Ingestion</h4>
+                    <p>Continuous monitoring of forums, social media, news sites, and regulatory filings</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🤖 AI-Powered Analysis</h4>
+                    <p>Sentiment analysis, trend detection, and automated insight generation</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🚨 Smart Alerting</h4>
+                    <p>Configurable alerts for significant market events and sentiment shifts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRD Cards -->
+        <section id="prds" class="section">
+            <h2 class="section-title">Product Requirements Documents</h2>
+            <div class="prd-grid">
+                <!-- Platform PRD -->
+                <div class="prd-card">
+                    <div class="prd-card-header">
+                        <span class="prd-icon">📊</span>
+                        <a href="tsx-platform.html" class="prd-title">TSX.AI Platform PRD</a>
+                    </div>
+                    <p class="prd-subtitle">Main platform requirements and system architecture</p>
+                    <p class="prd-description">
+                        The core platform document outlining the complete system design, from user authentication to data visualization.
+                    </p>
+                    <ul class="prd-features">
+                        <li>Identity & subscription management via Frontegg</li>
+                        <li>Four-layer system architecture</li>
+                        <li>Multi-tenant data model & MongoDB schemas</li>
+                        <li>Development phases from MVP to full implementation</li>
+                    </ul>
+                    <a href="tsx-platform.html" class="view-btn">View Document →</a>
+                </div>
+
+                <!-- AI Agents PRD -->
+                <div class="prd-card">
+                    <div class="prd-card-header">
+                        <span class="prd-icon">🤖</span>
+                        <a href="agents-ai.html" class="prd-title">AI Agents Service PRD</a>
+                    </div>
+                    <p class="prd-subtitle">Core intelligence and orchestration layer</p>
+                    <p class="prd-description">
+                        Details the AI agent architecture powering the platform's analysis pipeline and insight generation.
+                    </p>
+                    <ul class="prd-features">
+                        <li>Agentic Workflows for stateful processing</li>
+                        <li>Agent Teams for coordinated analysis</li>
+                        <li>Knowledge Base integration</li>
+                        <li>Long-term memory for persistent insights</li>
+                    </ul>
+                    <a href="agents-ai.html" class="view-btn">View Document →</a>
+                </div>
+
+                <!-- Data Collection PRD -->
+                <div class="prd-card">
+                    <div class="prd-card-header">
+                        <span class="prd-icon">📥</span>
+                        <a href="data-collection.html" class="prd-title">Data Collection Service PRD</a>
+                    </div>
+                    <p class="prd-subtitle">Comprehensive data ingestion mechanism</p>
+                    <p class="prd-description">
+                        Specifications for the exclusive data collection service covering multiple sources and platforms.
+                    </p>
+                    <ul class="prd-features">
+                        <li>15+ primary data sources</li>
+                        <li>10+ influencer sources</li>
+                        <li>Tailored scraping strategies per source</li>
+                        <li>Firecrawl implementation details</li>
+                    </ul>
+                    <a href="data-collection.html" class="view-btn">View Document →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture -->
+        <section id="architecture" class="section">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture">
+                <pre>
+┌─────────────────────────────────────────────────┐
+│                   Frontend                       │
+│              (Dashboard & Analytics)              │
+└─────────────────────────────────────────────────┘
+                        │
+┌─────────────────────────────────────────────────┐
+│                Identity Layer                    │
+│                  (Frontegg)                      │
+│    • Authentication  • Multi-tenancy             │
+│    • Subscriptions   • Feature Flags             │
+└─────────────────────────────────────────────────┘
+                        │
+┌─────────────────────────────────────────────────┐
+│              AGNO AI Agents Service              │
+│                                                  │
+│  ┌──────────────┐    ┌──────────────────────┐  │
+│  │  Ingestion   │───▶│   Analysis Team      │  │
+│  │    Agent     │    │ • Classifier         │  │
+│  └──────────────┘    │ • Sentiment Analyzer │  │
+│                      │ • Insight Generator  │  │
+│                      └──────────────────────┘  │
+└─────────────────────────────────────────────────┘
+                        │
+┌─────────────────────────────────────────────────┐
+│               Data Storage Layer                 │
+│                   (MongoDB)                      │
+│  • raw_posts      • processed_posts             │
+│  • alerts         • analytics                   │
+│  • tenants        • user_memories               │
+└─────────────────────────────────────────────────┘
+                </pre>
+            </div>
+        </section>
+
+        <!-- Development Phases -->
+        <section id="phases" class="section">
+            <h2 class="section-title">Development Roadmap</h2>
+            <div class="phases">
+                <div class="phase-card">
+                    <h3 class="phase-title">Phase 1: MVP</h3>
+                    <ul class="phase-items">
+                        <li>Frontegg integration for authentication</li>
+                        <li>Basic ingestion for Twitter and CEO.ca</li>
+                        <li>Content classification and sentiment analysis</li>
+                        <li>Single ticker support per tenant</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <h3 class="phase-title">Phase 2: Expansion</h3>
+                    <ul class="phase-items">
+                        <li>Full platform coverage (all data sources)</li>
+                        <li>Insight and alerting system</li>
+                        <li>Subscription plans and feature flags</li>
+                        <li>Complete MongoDB schema implementation</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <h3 class="phase-title">Phase 3: Advanced</h3>
+                    <ul class="phase-items">
+                        <li>Predictive analytics capabilities</li>
+                        <li>External API development</li>
+                        <li>Advanced data visualizations</li>
+                        <li>Machine learning enhancements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section id="quicklinks" class="section">
+            <h2 class="section-title">Quick Links & Resources</h2>
+            <div class="quick-links">
+                <div class="links-grid">
+                    <div class="link-item">
+                        <a href="https://github.com/vision6-ai/tsx.ai" target="_blank">GitHub Repository</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://docs.agno.ai" target="_blank">AGNO Framework</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://docs.frontegg.com" target="_blank">Frontegg Docs</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://www.mongodb.com/atlas" target="_blank">MongoDB Atlas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 TSX.AI Platform | Last Updated: September 2024</p>
+            <p>Internal Documentation | Vision6 AI</p>
+        </div>
+    </footer>
+</body>
+</html>
