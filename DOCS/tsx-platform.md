@@ -1,3 +1,7 @@
+[← Back to Index](index.md)
+
+---
+
 # TSX.AI Platform Product Requirements Document (PRD)
 
 ## 1. Platform Overview
